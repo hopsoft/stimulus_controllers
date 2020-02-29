@@ -36,7 +36,30 @@ export class AutosuggestController extends Controller {
   }
 
   keydown (event) {
-    if (event.key === 'Escape') return this.blur()
+    switch (event.key) {
+      case 'Escape':
+        this.blur()
+        break
+      case 'ArrowDown':
+        this.containerElement.dispatchEvent(
+          new CustomEvent('hopsoft:autosuggest:activate', {
+            detail: { direction: 'down' }
+          })
+        )
+        break
+      case 'ArrowUp':
+        this.containerElement.dispatchEvent(
+          new CustomEvent('hopsoft:autosuggest:activate', {
+            detail: { direction: 'up' }
+          })
+        )
+        break
+      case 'Enter':
+        const { activeAnchorElement } = this.containerElement.controller
+        if (activeAnchorElement)
+          this.value = activeAnchorElement.controller.value
+        break
+    }
   }
 
   input (event) {
@@ -52,6 +75,10 @@ export class AutosuggestController extends Controller {
 
   get value () {
     return this.element.value.trim()
+  }
+
+  set value (val) {
+    return (this.element.value = val.trim())
   }
 
   get actions () {

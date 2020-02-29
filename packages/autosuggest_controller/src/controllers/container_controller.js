@@ -2,6 +2,7 @@ import { Controller } from 'stimulus'
 
 export class ContainerController extends Controller {
   connect () {
+    this.element.controller = this
     this.element.classList.add(this.identifier)
     this.element.setAttribute('data-action', this.actions.join(' '))
     this.element.style.position = 'absolute'
@@ -29,6 +30,21 @@ export class ContainerController extends Controller {
     this.element.hidden = true
   }
 
+  filter (event) {
+    const { query } = event.detail
+    this.anchorElements.forEach(a => {
+      if (a.controller.normalizedValue.includes(query)) {
+        a.style.removeProperty('display')
+      } else {
+        a.style.display = 'none'
+      }
+    })
+  }
+
+  get anchorElements () {
+    return Array.from(this.element.querySelectorAll('a'))
+  }
+
   get autosuggestController () {
     return this.element.autosuggestController
   }
@@ -40,7 +56,8 @@ export class ContainerController extends Controller {
   get actions () {
     return [
       `hopsoft:autosuggest:show->${this.identifier}#show`,
-      `hopsoft:autosuggest:hide->${this.identifier}#hide`
+      `hopsoft:autosuggest:hide->${this.identifier}#hide`,
+      `hopsoft:autosuggest:filter->${this.identifier}#filter`
     ]
   }
 }

@@ -2,7 +2,9 @@ import { Controller } from 'stimulus'
 
 export class AnchorController extends Controller {
   connect () {
+    this.element.controller = this
     this.element.classList.add(this.identifier)
+    this.element.setAttribute('data-action', this.actions.join(' '))
     this.element.href = '#'
 
     if (this.text.length) {
@@ -28,11 +30,15 @@ export class AnchorController extends Controller {
     return this.optionElement.innerText.trim()
   }
 
-  get searchText () {
+  get normalizedValue () {
     return `${this.text} ${this.value}`.toLowerCase()
   }
 
   get optionElement () {
     return this.element.optionElement
+  }
+
+  get actions () {
+    return []
   }
 }

@@ -3,22 +3,34 @@
 <head>
   <meta charset="utf-8">
   <style>
+   * {
+     font-family: sans-serif;
+     font-size: 16px;
+   }
+   body {
+     padding: 20px;
+   }
+   input[type=email] {
+     width: 50%;
+   }
   .hopsoft-autosuggest-container {
     border: solid 1px #bfbfbf;
     box-shadow: 3px 3px 6px 0px rgba(0,0,0,0.1);
     height: 300px;
     margin-top: 4px;
-    width: 150px;
+    width: 180px;
   }
-  .hopsoft-autosuggest-container .hopsoft-autosuggest-anchor {
+  .hopsoft-autosuggest-anchor {
     display: block;
     margin-bottom: 8px;
     padding: 3px 6px;
   }
-  .hopsoft-autosuggest-container .hopsoft-autosuggest-anchor.active {
+  .hopsoft-autosuggest-anchor.active,
+  .hopsoft-autosuggest-anchor:hover {
     background-color: #eee;
   }
-  .hopsoft-autosuggest-container .hopsoft-autosuggest-anchor .value {
+  label,
+  .hopsoft-autosuggest-anchor .value {
     display: block;
     font-size: 0.8em;
     opacity: 0.6;
@@ -27,8 +39,12 @@
   <script src="../../main.js"></script>
 </head>
 <body>
-  <label for="email">Email</label>
-  <input id="email" name="email" type="email" list="contacts" data-controller="autosuggest">
+  <form>
+    <label for="email">Email Address</label>
+    <input id="email" name="email" type="email" list="contacts" data-controller="autosuggest" multiple>
+    <button type="reset">Reset</button>
+  </form>
+
   <datalist id="contacts"><option value="adalberto@example.net">Adalberto Deckow</option><option value="angle@example.com">Angle Skiles</option><option value="anisha@example.net">Anisha D'Amore</option><option value="anja@example.com">Anja Wilderman</option><option value="ariel@example.net">Ariel Ratke</option><option value="armand@example.org">Armand Hoeger</option><option value="arnita@example.com">Arnita Sanford</option><option value="aubrey@example.org">Aubrey Hammes</option><option value="augustus@example.com">Augustus Kirlin</option><option value="ayanna@example.net">Ayanna Gorczany</option><option value="benito@example.net">Benito Yundt</option><option value="brice@example.org">Brice Buckridge</option><option value="brice@example.net">Brice Zemlak</option><option value="bridgette@example.org">Bridgette Zieme</option><option value="brittani@example.org">Brittani Reinger</option><option value="broderick@example.net">Broderick Lubowitz</option><option value="candace@example.com">Candace Langosh</option><option value="candace@example.org">Candace Powlowski</option><option value="carlota@example.net">Carlota Treutel</option><option value="carmelia@example.net">Carmelia Leannon</option><option value="carson@example.org">Carson Beahan</option><option value="casey@example.org">Casey Denesik</option><option value="cassey@example.net">Cassey Altenwerth</option><option value="cedrick@example.com">Cedrick Senger</option><option value="charley@example.org">Charley Bergnaum</option><option value="clark@example.net">Clark Hodkiewicz</option><option value="cleta@example.com">Cleta O'Hara</option><option value="cordelia@example.org">Cordelia Kertzmann</option><option value="dana@example.org">Dana Mueller</option><option value="danny@example.org">Danny Glover</option><option value="darin@example.org">Darin Braun</option><option value="dave@example.org">Dave Ritchie</option><option value="dianne@example.com">Dianne Huel</option><option value="dionna@example.net">Dionna Barton</option><option value="dominic@example.net">Dominic Rodriguez</option><option value="dorsey@example.org">Dorsey Lind</option><option value="dwight@example.net">Dwight Weber</option><option value="earlie@example.org">Earlie Hahn</option><option value="elenor@example.org">Elenor Kreiger</option><option value="ezekiel@example.net">Ezekiel Wuckert</option><option value="felicita@example.com">Felicita Cummings</option><option value="floyd@example.org">Floyd Kunde</option><option value="francoise@example.org">Francoise Rutherford</option><option value="gale@example.com">Gale Quitzon</option><option value="georgia@example.net">Georgia Wisoky</option><option value="gudrun@example.com">Gudrun Swift</option><option value="halley@example.net">Halley Goodwin</option><option value="hallie@example.net">Hallie Kassulke</option><option value="hilario@example.net">Hilario Schneider</option><option value="hubert@example.net">Hubert Barrows</option><option value="jame@example.org">Jame Upton</option><option value="jerold@example.net">Jerold Hermann</option><option value="jeromy@example.org">Jeromy Wilkinson</option><option value="jesse@example.net">Jesse Conroy</option><option value="john@example.com">John Spinka</option><option value="jonathon@example.net">Jonathon Crist</option><option value="kristopher@example.net">Kristopher Hilpert</option><option value="launa@example.com">Launa Stoltenberg</option><option value="leon@example.org">Leon Gislason</option><option value="leonia@example.net">Leonia Langworth</option><option value="lewis@example.org">Lewis Sipes</option><option value="liliana@example.com">Liliana Okuneva</option><option value="magaly@example.org">Magaly Bode</option><option value="maranda@example.org">Maranda Oberbrunner</option><option value="maryln@example.org">Maryln Herzog</option><option value="mckinley@example.org">Mckinley Prosacco</option><option value="mercedes@example.com">Mercedes Ruecker</option><option value="michael@example.net">Michael Waters</option><option value="murray@example.com">Murray Klein</option><option value="napoleon@example.org">Napoleon Murray</option><option value="neil@example.com">Neil Carter</option><option value="nereida@example.org">Nereida Walter</option><option value="oscar@example.com">Oscar Kerluke</option><option value="pasty@example.com">Pasty Padberg</option><option value="pierre@example.net">Pierre Bruen</option><option value="quentin@example.com">Quentin Gulgowski</option><option value="ralph@example.org">Ralph Rice</option><option value="reynaldo@example.com">Reynaldo Wiegand</option><option value="rosamond@example.org">Rosamond Moore</option><option value="roy@example.net">Roy Wolff</option><option value="shawn@example.com">Shawn Hirthe</option><option value="tari@example.org">Tari Becker</option><option value="tawna@example.org">Tawna Shields</option><option value="tiera@example.org">Tiera Sauer</option><option value="toby@example.com">Toby DuBuque</option><option value="tosha@example.org">Tosha Stracke</option><option value="velda@example.com">Velda Jenkins</option><option value="vernon@example.net">Vernon Stiedemann</option><option value="weston@example.net">Weston Von</option><option value="wilfred@example.net">Wilfred Klocko</option><option value="yadira@example.com">Yadira Nicolas</option></datalist>
 </body>
 </html>

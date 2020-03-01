@@ -24,15 +24,12 @@ export class AutosuggestController extends Controller {
   }
 
   focus () {
-    this.containerElement.dispatchEvent(
-      new CustomEvent('hopsoft:autosuggest:show')
-    )
+    this.containerElement.controller.reset()
+    this.containerElement.controller.show()
   }
 
-  blur () {
-    this.containerElement.dispatchEvent(
-      new CustomEvent('hopsoft:autosuggest:hide')
-    )
+  blur (event) {
+    setTimeout(() => this.containerElement.controller.hide(), 25)
   }
 
   keydown (event) {
@@ -41,36 +38,56 @@ export class AutosuggestController extends Controller {
         this.blur()
         break
       case 'ArrowDown':
-        this.containerElement.dispatchEvent(
-          new CustomEvent('hopsoft:autosuggest:activate', {
-            detail: { direction: 'down' }
-          })
-        )
+        this.containerElement.controller.highlightNext()
         break
       case 'ArrowUp':
-        this.containerElement.dispatchEvent(
-          new CustomEvent('hopsoft:autosuggest:activate', {
-            detail: { direction: 'up' }
+        this.containerElement.controller.highlightPrevious()
+        break
+      case 'Enter':
+        event.preventDefault()
+        this.element.dispatchEvent(
+          new KeyboardEvent('keydown', {
+            bubbles: true,
+            cancelable: true,
+            code: 'Tab',
+            key: 'Tab',
+            keyIdentifier: 'Tab',
+            keyCode: 9,
+            which: 9
           })
         )
         break
-      case 'Enter':
+      case 'Tab':
         const { activeAnchorElement } = this.containerElement.controller
-        if (activeAnchorElement)
-          this.value = activeAnchorElement.controller.value
+        if (activeAnchorElement) {
+          const values = this.values
+          values.pop()
+          this.values = [...values, activeAnchorElement.controller.value]
+        }
+        break
+      case 'Backspace':
+        if (this.value === '') {
+          this.value = ''
+          this.containerElement.controller.reset()
+        } else if (this.containerElement.controller.find(this.lastValue)) {
+          event.preventDefault()
+          this.values = this.values.slice(0, -1)
+        }
         break
     }
   }
 
   input (event) {
     this.focus()
-    if (this.value.length) {
-      this.containerElement.dispatchEvent(
-        new CustomEvent('hopsoft:autosuggest:filter', {
-          detail: { query: this.value.toLowerCase() }
-        })
-      )
-    }
+    if (this.value.length)
+      this.containerElement.controller.filter(this.values.pop())
+  }
+
+  click (event) {
+    const anchor = event.target.closest(
+      '[data-controller="hopsoft-autosuggest-anchor"]'
+    )
+    if (anchor) this.values = [...this.values, anchor.controller.value]
   }
 
   get value () {
@@ -81,12 +98,31 @@ export class AutosuggestController extends Controller {
     return (this.element.value = val.trim())
   }
 
+  get values () {
+    return this.element.value.split(',').map(v => v.trim())
+  }
+
+  set values (vals) {
+    if (this.element.multiple)
+      return (this.value = vals
+        .map(v => v.trim())
+        .filter(v => v.length)
+        .join(','))
+
+    this.value = vals.pop()
+  }
+
+  get lastValue () {
+    return this.values.pop()
+  }
+
   get actions () {
     const list = new Set((this.element.dataset.action || '').split(' '))
     list.add(`blur->${this.identifier}#blur`)
     list.add(`focus->${this.identifier}#focus`)
     list.add(`input->${this.identifier}#input`)
     list.add(`keydown->${this.identifier}#keydown`)
+    list.add(`click@document->${this.identifier}#click`)
     return Array.from(list).filter(a => a.length)
   }
 

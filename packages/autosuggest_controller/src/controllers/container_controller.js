@@ -5,7 +5,6 @@ export class ContainerController extends Controller {
     this.activeIndex = -1
     this.element.controller = this
     this.element.classList.add(this.identifier)
-    this.element.setAttribute('data-action', this.actions.join(' '))
     this.element.style.position = 'absolute'
     this.element.style.minHeight = '100px'
     this.element.style.overflowY = 'scroll'
@@ -13,6 +12,8 @@ export class ContainerController extends Controller {
     this.element.hidden = true
     this.datalistElement.querySelectorAll('option').forEach(option => {
       const a = document.createElement('a')
+      a.autosuggestController = this.autosuggestController
+      a.containerController = this
       a.optionElement = option
       a.setAttribute('data-controller', 'hopsoft-autosuggest-anchor')
       this.element.appendChild(a)
@@ -31,8 +32,8 @@ export class ContainerController extends Controller {
     this.element.hidden = true
   }
 
-  filter (event) {
-    const { query } = event.detail
+  filter (query) {
+    query = query.toLowerCase().trim()
     this.activeIndex = -1
     this.anchorElements.forEach(a => {
       if (a.controller.normalizedValue.includes(query)) {
@@ -43,14 +44,11 @@ export class ContainerController extends Controller {
     })
   }
 
-  activate (event) {
-    const { direction } = event.detail
-    const max = this.visibleAnchorElements.length - 1
+  find (value) {
+    return this.visibleAnchorElements.find(a => a.controller.value === value)
+  }
 
-    direction === 'down' ? this.activeIndex++ : this.activeIndex--
-    if (this.activeIndex < 0) this.activeIndex = max
-    if (this.activeIndex > max) this.activeIndex = 0
-
+  highlight () {
     this.anchorElements.forEach(a => a.classList.remove('active'))
     this.activeAnchorElement.classList.add('active')
     this.activeAnchorElement.scrollIntoView({
@@ -58,6 +56,24 @@ export class ContainerController extends Controller {
       block: 'end',
       inline: 'end'
     })
+  }
+
+  highlightNext () {
+    this.activeIndex++
+    if (this.activeIndex > this.visibleAnchorElements.length - 1)
+      this.activeIndex = 0
+    this.highlight()
+  }
+
+  highlightPrevious () {
+    this.activeIndex--
+    if (this.activeIndex < 0)
+      this.activeIndex = this.visibleAnchorElements.length - 1
+    this.highlight()
+  }
+
+  reset () {
+    this.anchorElements.forEach(a => a.style.removeProperty('display'))
   }
 
   get anchorElements () {
@@ -78,14 +94,5 @@ export class ContainerController extends Controller {
 
   get datalistElement () {
     return this.autosuggestController.datalistElement
-  }
-
-  get actions () {
-    return [
-      `hopsoft:autosuggest:show->${this.identifier}#show`,
-      `hopsoft:autosuggest:hide->${this.identifier}#hide`,
-      `hopsoft:autosuggest:filter->${this.identifier}#filter`,
-      `hopsoft:autosuggest:activate->${this.identifier}#activate`
-    ]
   }
 }

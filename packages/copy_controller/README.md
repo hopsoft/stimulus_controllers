@@ -4,8 +4,9 @@ Copies text from `input` and `textarea` elements to the clipboard.
 
 ## Quick Start
 
+#### `app/javascript/controllers/index.js`
+
 ```js
-// app/javascript/controllers/index.js
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
 import CopyController from '@hopsoft/copy-controller'
@@ -16,8 +17,9 @@ application.load(definitionsFromContext(context))
 application.register('copy', CopyController)
 ```
 
+#### `app/views/demos/copy.html.erb`
+
 ```html
-<!-- app/views/demos/copy.html.erb -->
 <div data-controller="copy" data-copied-content='Copied...' data-copied-duration='2'>
   <textarea data-target='copy.source'></textarea>
   <button type="button" data-target='copy.button' data-action='click->copy#copy'>Copy</button>

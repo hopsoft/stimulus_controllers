@@ -17,7 +17,7 @@ application.register('copy', CopyController)
 ```
 
 ```html
-// app/views/demos/copy.html.erb
+<!-- app/views/demos/copy.html.erb -->
 <div data-controller="copy" data-copied-content='Copied...' data-copied-duration='2'>
   <textarea data-target='copy.source'></textarea>
   <button type="button" data-target='copy.button' data-action='click->copy#copy'>Copy</button>

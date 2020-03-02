@@ -28,7 +28,7 @@ application.register('copy', CopyController)
 
 ## Usage
 
-The root element is a container that holds holds all other elements and is configured by setting
+The root element is a container that holds holds all other elements and is configured by setting:
 
 ```
 data-controller="copy"
@@ -36,16 +36,16 @@ data-controller="copy"
 
 ### Configuration
 
-| Attribute              |          | Default   | Description                                                                                        |
-| ---------------------  | -------- | --------- | -------------------------------------------------------------------------------------------------- |
-| `data-copied-content`  | optional | Copied... | Content to show in the button after a copy has been performed                                      |
-| `data-copied-duration` | optional | 2         | How many seconds to show the copied content in the button before reverting to the original content |
+| Attribute              |          | Default     | Description                                                                                        |
+| ---------------------  | -------- | ----------- | -------------------------------------------------------------------------------------------------- |
+| `data-copied-content`  | optional | "Copied..." | Content to show in the button after a copy has been performed                                      |
+| `data-copied-duration` | optional | 2           | How many seconds to show the copied content in the button before reverting to the original content |
 
 Copied content can be disabled by setting `data-copied-content=""` or `data-copied-duration="0"`
 
 ### Targets
 
-Targets are child elements identified by setting
+Targets are child elements identified by setting:
 
 ```
 data-target="copy.TARGET_NAME"
@@ -58,7 +58,7 @@ data-target="copy.TARGET_NAME"
 
 ### Actions
 
-Actions are behaviors that can be triggered and are identified by setting
+Actions are behaviors that can be triggered and are identified by setting:
 
 ```
 data-action="copy#ACTION_NAME"

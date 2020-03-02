@@ -6,9 +6,6 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
   },
-  resolve: {
-    modules: [path.resolve(__dirname, '../packages'), 'node_modules']
-  },
   module: {
     rules: [
       {
@@ -26,11 +23,5 @@ module.exports = {
         }
       }
     ]
-  },
-  devServer: {
-    port: 3000,
-    contentBase: './src',
-    watchContentBase: true,
-    index: 'html/autosuggest.html'
   }
 }

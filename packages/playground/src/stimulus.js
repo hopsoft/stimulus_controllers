@@ -1,7 +1,7 @@
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
-import AutosuggestController from 'autosuggest_controller/src'
-import CopyController from 'copy_controller/src'
+import AutosuggestController from '@hopsoft/autosuggest-controller/src'
+import CopyController from '@hopsoft/copy-controller/src'
 
 const application = Application.start()
 application.register('autosuggest', AutosuggestController)

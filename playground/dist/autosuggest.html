@@ -29,18 +29,17 @@
   .hopsoft-autosuggest-anchor:hover {
     background-color: #eee;
   }
-  label,
   .hopsoft-autosuggest-anchor .value {
     display: block;
     font-size: 0.8em;
     opacity: 0.6;
   }
   </style>
-  <script src="../../main.js"></script>
+  <script src="@controllers.js"></script>
 </head>
 <body>
   <form>
-    <label for="email">Email Address</label>
+    <label for="email" class="block">Email Address</label>
     <input id="email" name="email" type="email" list="contacts" data-controller="autosuggest" multiple>
     <button type="reset">Reset</button>
   </form>

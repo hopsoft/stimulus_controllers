@@ -2,28 +2,14 @@
 
 This project supports in browser manual testing of the Stimulus components defined in `packages`.
 
-## Setup
-
-```sh
-cd playground
-yarn
-```
-
 ## Testing
 
-1. Update `playground/src/index.js` to import the desired Stimulus controller.
+1. Update `src/stimulus.js` to import the desired Stimulus controllers.
 
-1. Create an HTML file under `playground/src/html` to test the desired Stimulus controller.
+1. Create an HTML file under `dist` for the Stimulus controller to be tested.
 
 1. Start the dev server.
 
     ```sh
-    cd playground
-    yarn run webpack-dev-server
-    ```
-
-1. Open the HTML page in a browser.
-
-    ```sh
-    open playground/html/example.html
+    yarn start
     ```

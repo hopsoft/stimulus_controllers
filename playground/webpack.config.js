@@ -3,8 +3,8 @@ const path = require('path')
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    filename: '@controllers.js'
   },
   resolve: {
     modules: [path.resolve(__dirname, '../packages'), 'node_modules']
@@ -24,13 +24,17 @@ module.exports = {
             ]
           }
         }
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       }
     ]
   },
   devServer: {
     port: 3000,
-    contentBase: './src',
+    contentBase: path.resolve(__dirname, 'dist'),
     watchContentBase: true,
-    index: 'html/autosuggest.html'
+    open: true
   }
 }

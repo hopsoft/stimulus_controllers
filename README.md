@@ -8,12 +8,10 @@ This project is comprised of 2 primary directories.
 
 2. `playground` - a place to test the controller library
 
-    Test pages are created at `src/html/COMPONENT_NAME.html`
+    Test pages are created at `dist/COMPONENT_NAME.html`
 
 ## Quick Start
 
 ```sh
-cd playground && yarn run webpack-dev-server
+cd playground && yarn start
 ```
-
-Then navigate to http://localhost:3000/html/ in a browser.

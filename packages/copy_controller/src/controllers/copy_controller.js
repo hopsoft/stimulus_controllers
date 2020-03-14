@@ -1,23 +1,25 @@
 import { Controller } from 'stimulus'
 
 export class CopyController extends Controller {
-  static targets = ['source', 'button']
+  static targets = ['source', 'trigger']
 
   copy (event) {
     event.preventDefault()
-    if (!this.value.trim().length) return
+    const value = this.value
+    if (!value.length) return
     this.sourceTarget.select()
     document.execCommand('copy')
-    //this.sourceTarget.blur()
-    //document.getSelection().removeAllRanges()
     this.showCopied()
+    this.sourceTarget.value = ''
+    this.sourceTarget.value = value
+    this.sourceTarget.focus()
   }
 
   showCopied () {
-    const content = this.buttonTarget.innerHTML
+    const content = this.triggerTarget.innerHTML
     if (this.copiedContent === content || this.copiedDuration === 0) return
-    this.buttonTarget.innerHTML = this.copiedContent
-    setTimeout(() => (this.buttonTarget.innerHTML = content), 2000)
+    this.triggerTarget.innerHTML = this.copiedContent
+    setTimeout(() => (this.triggerTarget.innerHTML = content), 2000)
   }
 
   get value () {

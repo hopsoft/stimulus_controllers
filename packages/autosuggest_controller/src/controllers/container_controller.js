@@ -50,8 +50,12 @@ export class ContainerController extends Controller {
   }
 
   highlight () {
-    this.anchorElements.forEach(a => a.classList.remove('active'))
-    this.activeAnchorElement.classList.add('active')
+    this.anchorElements.forEach(a =>
+      a.classList.remove(a.controller.activeCssClass)
+    )
+    this.activeAnchorElement.classList.add(
+      this.activeAnchorElement.controller.activeCssClass
+    )
     this.activeAnchorElement.scrollIntoView({
       behavior: 'smooth',
       block: 'end',

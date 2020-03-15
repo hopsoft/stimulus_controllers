@@ -46,6 +46,10 @@ export class AnchorController extends Controller {
     return this.element.autosuggestController.element.dataset.anchorClass
   }
 
+  get activeCssClass () {
+    return this.element.autosuggestController.element.dataset.anchorActiveClass
+  }
+
   get textCssClass () {
     return this.autosuggestController.element.dataset.anchorTextClass
   }

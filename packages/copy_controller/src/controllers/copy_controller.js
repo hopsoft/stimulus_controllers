@@ -19,7 +19,10 @@ export class CopyController extends Controller {
     const content = this.triggerTarget.innerHTML
     if (this.copiedContent === content || this.copiedDuration === 0) return
     this.triggerTarget.innerHTML = this.copiedContent
-    setTimeout(() => (this.triggerTarget.innerHTML = content), 2000)
+    setTimeout(
+      () => (this.triggerTarget.innerHTML = content),
+      this.copiedDuration
+    )
   }
 
   get value () {
@@ -31,6 +34,6 @@ export class CopyController extends Controller {
   }
 
   get copiedDuration () {
-    return Number(this.element.dataset.copiedDuration || 2) * 1000
+    return Number(this.element.dataset.copiedDuration || 2000)
   }
 }

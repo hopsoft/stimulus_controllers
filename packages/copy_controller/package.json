@@ -3,13 +3,8 @@
   "author": "Nathan Hopkins",
   "license": "MIT",
   "version": "0.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com:hopsoft/stimulus-components.git"
-  },
-  "scripts": {
-    "build": "webpack --config webpack.config.js"
-  },
+  "repository": "hopsoft/stimulus-components",
+  "main": "src/index",
   "dependencies": {
     "stimulus": "^1.1.1"
   },

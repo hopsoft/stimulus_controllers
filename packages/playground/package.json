@@ -4,10 +4,7 @@
   "private": true,
   "license": "MIT",
   "version": "0.0.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com:hopsoft/stimulus-components.git"
-  },
+  "repository": "hopsoft/stimulus-components",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server --mode=development --config webpack.config.js"

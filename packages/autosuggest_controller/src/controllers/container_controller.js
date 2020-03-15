@@ -4,6 +4,7 @@ export class ContainerController extends Controller {
   connect () {
     this.activeIndex = -1
     this.element.controller = this
+    this.element.setAttribute('class', this.cssClass)
     this.element.classList.add(this.identifier)
     this.element.style.position = 'absolute'
     this.element.style.minHeight = '100px'
@@ -94,5 +95,9 @@ export class ContainerController extends Controller {
 
   get datalistElement () {
     return this.autosuggestController.datalistElement
+  }
+
+  get cssClass () {
+    return this.autosuggestController.element.dataset.containerClass
   }
 }

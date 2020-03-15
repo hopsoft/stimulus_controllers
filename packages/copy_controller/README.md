@@ -20,9 +20,9 @@ application.register('copy', CopyController)
 #### `app/views/demos/copy.html.erb`
 
 ```html
-<div data-controller="copy" data-copied-content='Copied...' data-copied-duration='2'>
+<div data-controller="copy" data-copied-content='Copied...' data-copied-duration='1'>
   <textarea data-target='copy.source'></textarea>
-  <button type="button" data-target='copy.button' data-action='click->copy#copy'>Copy</button>
+  <button type="button" data-target='copy.target' data-action='click->copy#copy'>Copy</button>
 </div>
 ```
 
@@ -36,10 +36,10 @@ data-controller="copy"
 
 ### Configuration
 
-| Attribute              |          | Default     | Description                                                                                        |
-| ---------------------  | -------- | ----------- | -------------------------------------------------------------------------------------------------- |
-| `data-copied-content`  | optional | "Copied..." | Content to show in the button after a copy has been performed                                      |
-| `data-copied-duration` | optional | 2           | How many seconds to show the copied content in the button before reverting to the original content |
+| Attribute              |          | Default     | Description                                                                                             |
+| ---------------------  | -------- | ----------- | ------------------------------------------------------------------------------------------------------- |
+| `data-copied-content`  | optional | "Copied..." | Content to show in the button after a copy has been performed                                           |
+| `data-copied-duration` | optional | 2000        | How many milliseconds to show the copied content in the button before reverting to the original content |
 
 Copied content can be disabled by setting `data-copied-content=""` or `data-copied-duration="0"`
 
@@ -51,10 +51,10 @@ Targets are child elements identified by setting:
 data-target="copy.TARGET_NAME"
 ```
 
-| Name     |          | Description                                              |
-| -------- | -------- | -------------------------------------------------------- |
-| `source` | required | An input or textarea that holds the content to be copied |
-| `button` | required | The button used to perform the copy                      |
+| Name      |          | Description                                              |
+| --------- | -------- | -------------------------------------------------------- |
+| `source`  | required | An input or textarea that holds the content to be copied |
+| `trigger` | required | The button used to perform the copy                      |
 
 ### Actions
 

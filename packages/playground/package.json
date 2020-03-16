@@ -1,9 +1,8 @@
 {
   "name": "playground",
   "author": "Nathan Hopkins",
-  "private": true,
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "repository": "hopsoft/stimulus-components",
   "scripts": {
     "build": "webpack --config webpack.config.js",

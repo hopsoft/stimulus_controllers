@@ -46,7 +46,7 @@ export class ContainerController extends Controller {
   }
 
   find (value) {
-    return this.visibleAnchorElements.find(a => a.controller.value === value)
+    return this.anchorElements.find(a => a.controller.value === value)
   }
 
   highlight () {

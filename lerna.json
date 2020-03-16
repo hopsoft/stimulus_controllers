@@ -1,6 +1,6 @@
 {
   "packages": [
-    "packages/*"
+    "packages/*_controller"
   ],
   "version": "0.0.1"
 }

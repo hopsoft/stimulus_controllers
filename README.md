@@ -10,6 +10,17 @@
 
     Test pages are created at `packages/playground/dist/COMPONENT_NAME.html`
 
+## Setup & Publishing
+
+This project publishes NPM packages with [Lerna](https://github.com/lerna/lerna).
+
+```sh
+yarn
+lerna bootstrap
+lerna changed
+lerna publish
+```
+
 ## Quick Start
 
 ```sh

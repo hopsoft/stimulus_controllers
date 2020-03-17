@@ -5,6 +5,9 @@
   "version": "0.0.3",
   "repository": "hopsoft/stimulus-components",
   "main": "src/index",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "stimulus": "^1.1.1"
   },

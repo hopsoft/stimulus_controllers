@@ -4,6 +4,10 @@ Copies text from `input` and `textarea` elements to the clipboard.
 
 ## Quick Start
 
+```sh
+yarn add @hopsoft/copy-controller
+```
+
 #### `app/javascript/controllers/index.js`
 
 ```js

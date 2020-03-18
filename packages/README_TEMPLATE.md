@@ -1,22 +1,15 @@
-# Autosuggest Controller
+# Controller Name
 
 Brief description...
 
 ## Quick Start
 
 ```sh
-yarn add @hopsoft/autosuggest-controller
+installation
 ```
 
 ```js
-import { Application } from 'stimulus'
-import { definitionsFromContext } from 'stimulus/webpack-helpers'
-import AutosuggestController from '@hopsoft/autosuggest-controller'
-
-const application = Application.start()
-const context = require.context('./controllers', true, /\.js$/)
-application.load(definitionsFromContext(context))
-application.register('autosuggest', AutosuggestController)
+initialization
 ```
 
 ```html

@@ -17,23 +17,20 @@ export class CopyController extends Controller {
 
   showCopied () {
     const content = this.triggerTarget.innerHTML
-    if (this.copiedContent === content || this.copiedDuration === 0) return
-    this.triggerTarget.innerHTML = this.copiedContent
-    setTimeout(
-      () => (this.triggerTarget.innerHTML = content),
-      this.copiedDuration
-    )
+    if (this.content === content || this.duration === 0) return
+    this.triggerTarget.innerHTML = this.content
+    setTimeout(() => (this.triggerTarget.innerHTML = content), this.duration)
   }
 
   get value () {
     return this.sourceTarget.value
   }
 
-  get copiedContent () {
-    return this.element.dataset.copiedContent || 'Copied...'
+  get content () {
+    return this.data.get('content') || 'Copied...'
   }
 
-  get copiedDuration () {
-    return Number(this.element.dataset.copiedDuration || 2000)
+  get duration () {
+    return Number(this.data.get('duration') || 2000)
   }
 }

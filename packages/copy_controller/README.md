@@ -20,7 +20,7 @@ application.register('copy', CopyController)
 #### `app/views/demos/copy.html.erb`
 
 ```html
-<div data-controller="copy" data-copied-content='Copied...' data-copied-duration='1'>
+<div data-controller="copy" data-copy-content='Copied...' data-copy-duration='1'>
   <textarea data-target='copy.source'></textarea>
   <button type="button" data-target='copy.target' data-action='click->copy#copy'>Copy</button>
 </div>
@@ -36,12 +36,12 @@ data-controller="copy"
 
 ### Configuration
 
-| Attribute              |          | Default     | Description                                                                                             |
-| ---------------------  | -------- | ----------- | ------------------------------------------------------------------------------------------------------- |
-| `data-copied-content`  | optional | "Copied..." | Content to show in the button after a copy has been performed                                           |
-| `data-copied-duration` | optional | 2000        | How many milliseconds to show the copied content in the button before reverting to the original content |
+| Attribute             |          | Default     | Description                                                                                             |
+| --------------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------- |
+| `data-copy-content`   | optional | "Copied..." | Content to show in the button after a copy has been performed                                           |
+| `data-copy-duration`  | optional | 2000        | How many milliseconds to show the copied content in the button before reverting to the original content |
 
-Copied content can be disabled by setting `data-copied-content=""` or `data-copied-duration="0"`
+Copied content can be disabled by setting `data-copy-content=""` or `data-copy-duration="0"`
 
 ### Targets
 

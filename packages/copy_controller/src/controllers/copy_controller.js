@@ -7,12 +7,7 @@ export class CopyController extends Controller {
     event.preventDefault()
     const value = this.value
     if (!value.length) return
-    this.sourceTarget.select()
-    document.execCommand('copy')
-    this.showCopied()
-    this.sourceTarget.value = ''
-    this.sourceTarget.value = value
-    this.sourceTarget.focus()
+    this._doCopy()
   }
 
   showCopied () {
@@ -22,8 +17,30 @@ export class CopyController extends Controller {
     setTimeout(() => (this.triggerTarget.innerHTML = content), this.duration)
   }
 
+  _doCopy () {
+    let range
+    if (this.sourceTarget.value) {
+      this.sourceTarget.select()
+    } else {
+      range = document.createRange()
+      range.selectNode(this.sourceTarget)
+      window.getSelection().addRange(range)
+    }
+
+    document.execCommand('copy')
+    this.showCopied()
+
+    if (this.sourceTarget.value) {
+      this.sourceTarget.value = ''
+      this.sourceTarget.value = value
+      this.sourceTarget.focus()
+    } else {
+      window.getSelection().removeRange(range)
+    }
+  }
+
   get value () {
-    return this.sourceTarget.value
+    return this.sourceTarget.value || this.sourceTarget.innerHTML
   }
 
   get content () {

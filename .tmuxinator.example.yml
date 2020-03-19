@@ -1,0 +1,10 @@
+# SEE: https://github.com/tmuxinator/tmuxinator
+name: stimulus_controllers
+root: /path/to/project
+
+on_project_start: lsof -t -i tcp:3000 | xargs kill -KILL;
+pre_window: asdf local nodejs 13.0.1;
+
+windows:
+  - editor: nvim
+  - server: cd packages/playground && yarn start

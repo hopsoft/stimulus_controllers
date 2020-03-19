@@ -30,3 +30,13 @@ yarn
 lerna bootstrap
 cd packages/playground && yarn start
 ```
+
+### Tmuxinator
+
+1. `gem install tmuxinator`
+
+1. `cp .tmuxinator.example.yml .tmuxinator.yml`
+
+1. Edit `.tmuxinator.yml`
+
+1. `bin/tmuxinator`

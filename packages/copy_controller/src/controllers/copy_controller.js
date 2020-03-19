@@ -5,8 +5,8 @@ export class CopyController extends Controller {
 
   copy (event) {
     event.preventDefault()
-    const value = this.value
-    if (!value.length) return
+    this.value = this.sourceTarget.value || this.sourceTarget.innerHTML
+    if (!this.value.length) return
     this._doCopy()
   }
 
@@ -32,15 +32,11 @@ export class CopyController extends Controller {
 
     if (this.sourceTarget.value) {
       this.sourceTarget.value = ''
-      this.sourceTarget.value = value
+      this.sourceTarget.value = this.value
       this.sourceTarget.focus()
     } else {
       window.getSelection().removeRange(range)
     }
-  }
-
-  get value () {
-    return this.sourceTarget.value || this.sourceTarget.innerHTML
   }
 
   get content () {

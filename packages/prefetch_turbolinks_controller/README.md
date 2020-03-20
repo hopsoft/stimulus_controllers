@@ -29,9 +29,11 @@ application.register('prefetch', PrefetchTurbolinksController)
 </a>
 ```
 
-## Usage
+## [Controller](https://stimulusjs.org/reference/controllers)
 
-Simply define `data-controller=prefetch` on any anchor tags that require prefetch behavior.
+```html
+<a data-controller="prefetch"></a>
+```
 
 ### [Actions](https://stimulusjs.org/reference/actions)
 

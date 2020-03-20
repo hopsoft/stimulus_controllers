@@ -27,7 +27,11 @@ application.register('prefetch', ExampleController)
 <!-- usage -->
 ```
 
-## Usage
+## [Controller](https://stimulusjs.org/reference/controllers)
+
+```html
+<div data-controller="controller"></div>
+```
 
 Friendly summary
 

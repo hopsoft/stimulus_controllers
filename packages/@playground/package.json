@@ -6,8 +6,8 @@
   "version": "0.0.5",
   "repository": "hopsoft/stimulus_controllers",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "start": "webpack-dev-server --mode=development --config webpack.config.js"
+    "build": "yarn run webpack --mode=development --config webpack.config.js",
+    "start": "yarn run webpack-dev-server --mode=development --config webpack.config.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",

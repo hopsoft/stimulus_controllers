@@ -8,10 +8,13 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "build": "yarn run webpack --mode=production --config webpack.config.js"
+  },
   "dependencies": {
-    "@hopsoft/autosuggest-controller": "^0.0.5",
-    "@hopsoft/copy-controller": "^0.0.5",
-    "@hopsoft/prefetch-turbolinks-controller": "^0.0.5",
+    "@hopsoft/autosuggest-controller": ">=0",
+    "@hopsoft/copy-controller": ">=0",
+    "@hopsoft/prefetch-turbolinks-controller": ">=0",
     "stimulus": "^1.1.1"
   },
   "devDependencies": {

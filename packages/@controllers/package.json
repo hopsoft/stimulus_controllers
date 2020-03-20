@@ -1,5 +1,5 @@
 {
-  "name": "@hopsoft/autosuggest-controller",
+  "name": "@hopsoft/controllers",
   "author": "Nathan Hopkins",
   "license": "MIT",
   "version": "0.0.4",
@@ -9,12 +9,18 @@
     "access": "public"
   },
   "dependencies": {
+    "@hopsoft/autosuggest-controller": ">= 0.0.0",
+    "@hopsoft/copy-controller": ">= 0.0.0",
     "stimulus": "^1.1.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
+    "babel-loader": "^8.0.6",
     "prettier-standard": "^16.1.0",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
-  },
-  "gitHead": "8f8c52b1e7e78749be47206d00a79c40706ff636"
+  }
 }

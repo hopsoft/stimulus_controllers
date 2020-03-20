@@ -1,5 +1,5 @@
 {
-  "name": "@hopsoft/controllers",
+  "name": "@hopsoft/prefetch-turbolinks-controller",
   "author": "Nathan Hopkins",
   "license": "MIT",
   "version": "0.0.5",
@@ -9,9 +9,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@hopsoft/autosuggest-controller": "^0.0.5",
-    "@hopsoft/copy-controller": "^0.0.5",
-    "@hopsoft/prefetch-turbolinks-controller": "^0.0.5",
     "stimulus": "^1.1.1"
   },
   "devDependencies": {
@@ -23,5 +20,6 @@
     "prettier-standard": "^16.1.0",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
-  }
+  },
+  "gitHead": "8f8c52b1e7e78749be47206d00a79c40706ff636"
 }

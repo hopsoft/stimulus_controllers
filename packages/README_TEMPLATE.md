@@ -2,29 +2,23 @@
 
 Brief description
 
-## Quick Start
-
-### Installation
+## Installation
 
 ```sh
 yarn add @hopsoft/example-controller
 ```
 
-### Initialization
+## Initialization
 
 ```js
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
-import ExampleController from '@hopsoft/example-controller'
+import ExampleController from '@hopsoft/example-controller' // <---
 
 const application = Application.start()
 const context = require.context('./controllers', true, /\.js$/)
 application.load(definitionsFromContext(context))
-application.register('prefetch', ExampleController)
-```
-
-```html
-<!-- usage -->
+application.register('prefetch', ExampleController) // <---
 ```
 
 ## [Controller](https://stimulusjs.org/reference/controllers)

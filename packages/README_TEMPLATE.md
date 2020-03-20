@@ -1,51 +1,50 @@
 # Controller Name
 
-Brief description...
+Brief description
 
 ## Quick Start
 
+### Installation
+
 ```sh
-installation
+yarn add @hopsoft/example-controller
 ```
 
+### Initialization
+
 ```js
-initialization
+import { Application } from 'stimulus'
+import { definitionsFromContext } from 'stimulus/webpack-helpers'
+import ExampleController from '@hopsoft/example-controller'
+
+const application = Application.start()
+const context = require.context('./controllers', true, /\.js$/)
+application.load(definitionsFromContext(context))
+application.register('prefetch', ExampleController)
 ```
 
 ```html
-usage
+<!-- usage -->
 ```
 
 ## Usage
 
-Friendly summary...
+Friendly summary
 
-### Targets
+### [Targets](https://stimulusjs.org/reference/targets)
 
-Targets are child elements identified by setting:
+| Name      |                   | Example                           | Description         |
+| --------- | ----------------- | --------------------------------- | ------------------- |
+| `target`  | required/optional | `data-target="controller.target"` | Describe the target |
 
-```
-data-target="controller.target"
-```
+### [Actions](https://stimulusjs.org/reference/actions)
 
-| Name      |                   | Description            |
-| --------- | ----------------- | ---------------------- |
-| `target`  | required/optional | Describe the target... |
+| Name      |                   | Example                           | Description         |
+| --------- | ----------------- | --------------------------------- | ------------------- |
+| `action`  | required/optional | `data-action="controller#action"` | Describe the action |
 
-### Actions
+### [Configuration](https://stimulusjs.org/handbook/managing-state)
 
-Actions are behaviors that can be triggered and are identified by setting:
-
-```
-data-action="controller#action"
-```
-
-| Name      |                   | Description            |
-| --------- | ----------------- | ---------------------- |
-| `action`  | required/optional | Describe the action... |
-
-### Configuration
-
-| Attribute           |                   | Default | Description               |
-| ------------------- | ----------------- | ------- | ------------------------- |
-| `data-controller-?` | required/optional | "..."   | Describe the attribute... |
+| Attribute              |                   | Default | Example                        | Description            |
+| ---------------------- | ----------------- | ------- | ------------------------------ | ---------------------- |
+| `data-controller-attr` | required/optional | `...`   | `data-controller-attr="value"` | Describe the attribute |

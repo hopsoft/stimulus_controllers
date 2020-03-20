@@ -2,3 +2,4 @@
 
 cloc --exclude-dir=node_modules,test --include-ext=js --md --out=./packages/autosuggest_controller/LOC.md ./packages/autosuggest_controller/src
 cloc --exclude-dir=node_modules,test --include-ext=js --md --out=./packages/copy_controller/LOC.md ./packages/copy_controller/src
+cloc --exclude-dir=node_modules,test --include-ext=js --md --out=./packages/prefetch_turbolinks_controller/LOC.md ./packages/prefetch_turbolinks_controller/src

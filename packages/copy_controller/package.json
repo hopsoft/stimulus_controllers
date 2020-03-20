@@ -3,7 +3,7 @@
   "author": "Nathan Hopkins",
   "license": "MIT",
   "version": "0.0.4",
-  "repository": "hopsoft/stimulus-components",
+  "repository": "hopsoft/stimulus_controllers",
   "main": "src/index",
   "publishConfig": {
     "access": "public"

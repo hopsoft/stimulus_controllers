@@ -4,7 +4,7 @@
   "private": true,
   "license": "MIT",
   "version": "0.0.0",
-  "repository": "hopsoft/stimulus-components",
+  "repository": "hopsoft/stimulus_controllers",
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "webpack-dev-server --mode=development --config webpack.config.js"
@@ -12,8 +12,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
-    "@hopsoft/autosuggest-controller": "^0.0.4",
-    "@hopsoft/copy-controller": "^0.0.4",
+    "@hopsoft/controllers": "^0.0.4",
     "stimulus": "^1.1.1",
     "tailwindcss": "^1.2.0"
   },

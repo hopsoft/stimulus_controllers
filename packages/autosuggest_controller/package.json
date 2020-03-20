@@ -2,7 +2,7 @@
   "name": "@hopsoft/autosuggest-controller",
   "author": "Nathan Hopkins",
   "license": "MIT",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": "hopsoft/stimulus_controllers",
   "main": "src/index",
   "publishConfig": {

@@ -6,7 +6,7 @@ important links whenever users hover over them.
 ## Installation
 
 ```sh
-yarn add @hopsoft/prefetch-turbolinks-controller
+yarn add @hopsoft/controllers
 ```
 
 ## Initialization
@@ -14,7 +14,7 @@ yarn add @hopsoft/prefetch-turbolinks-controller
 ```js
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
-import PrefetchTurbolinksController from '@hopsoft/prefetch-turbolinks-controller' // <---
+import { PrefetchTurbolinksController } from '@hopsoft/controllers' // <---
 
 const application = Application.start()
 const context = require.context('./controllers', true, /\.js$/)

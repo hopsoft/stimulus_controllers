@@ -2,26 +2,26 @@
 
 Copies text from `input` and `textarea` elements to the clipboard.
 
-## Quick Start
+## Installation
 
 ```sh
-yarn add @hopsoft/copy-controller
+yarn add @hopsoft/controllers
 ```
 
-#### `app/javascript/controllers/index.js`
+## Initialization
 
 ```js
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
-import CopyController from '@hopsoft/copy-controller'
+import { CopyController } from '@hopsoft/controllers' // <---
 
 const application = Application.start()
 const context = require.context('./controllers', true, /\.js$/)
 application.load(definitionsFromContext(context))
-application.register('copy', CopyController)
+application.register('copy', CopyController) // <---
 ```
 
-#### `app/views/demos/copy.html.erb`
+## [Controller](https://stimulusjs.org/reference/controllers)
 
 ```html
 <div data-controller="copy" data-copy-content='Copied...' data-copy-duration='1'>
@@ -30,44 +30,26 @@ application.register('copy', CopyController)
 </div>
 ```
 
-## Usage
-
-The root element is a container that holds holds all other elements and is configured by setting:
-
-```
-data-controller="copy"
-```
-
-### Configuration
-
-| Attribute             |          | Default     | Description                                                                                             |
-| --------------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------- |
-| `data-copy-content`   | optional | "Copied..." | Content to show in the button after a copy has been performed                                           |
-| `data-copy-duration`  | optional | 2000        | How many milliseconds to show the copied content in the button before reverting to the original content |
-
-Copied content can be disabled by setting `data-copy-content=""` or `data-copy-duration="0"`
-
-### Targets
-
-Targets are child elements identified by setting:
-
-```
-data-target="copy.TARGET_NAME"
-```
+### [Targets](https://stimulusjs.org/reference/targets)
 
 | Name      |          | Description                                              |
 | --------- | -------- | -------------------------------------------------------- |
 | `source`  | required | An input or textarea that holds the content to be copied |
 | `trigger` | required | The button used to perform the copy                      |
 
-### Actions
 
-Actions are behaviors that can be triggered and are identified by setting:
-
-```
-data-action="copy#ACTION_NAME"
-```
+### [Actions](https://stimulusjs.org/reference/actions)
 
 | Name     |          | Description                                                         |
 | -------- | -------- | ------------------------------------------------------------------- |
 | `copy`   | required | Performs the copy action (typically defined on the `button` target) |
+
+
+### [Configuration](https://stimulusjs.org/handbook/managing-state)
+
+| Attribute             |          | Default     | Description                                                                                             |
+| --------------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------- |
+| `data-copy-content`   | optional | "Copied..." | Content to show in the button after a copy has been performed                                           |
+| `data-copy-duration`  | optional | 2000        | How many milliseconds to show the copied content in the button before reverting to the original content |
+
+Copy content can be disabled by setting `data-copy-content=""` or `data-copy-duration="0"`

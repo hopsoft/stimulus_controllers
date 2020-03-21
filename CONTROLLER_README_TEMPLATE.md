@@ -5,7 +5,7 @@ Brief description
 ## Installation
 
 ```sh
-yarn add @hopsoft/example-controller
+yarn add @hopsoft/controllers
 ```
 
 ## Initialization
@@ -13,7 +13,7 @@ yarn add @hopsoft/example-controller
 ```js
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
-import ExampleController from '@hopsoft/example-controller' // <---
+import { ExampleController } from '@hopsoft/controllers' // <---
 
 const application = Application.start()
 const context = require.context('./controllers', true, /\.js$/)
@@ -26,8 +26,6 @@ application.register('prefetch', ExampleController) // <---
 ```html
 <div data-controller="controller"></div>
 ```
-
-Friendly summary
 
 ### [Targets](https://stimulusjs.org/reference/targets)
 

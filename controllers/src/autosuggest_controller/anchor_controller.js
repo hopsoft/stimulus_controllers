@@ -43,18 +43,18 @@ export class AnchorController extends Controller {
   }
 
   get cssClass () {
-    return this.element.autosuggestController.element.dataset.anchorClass
+    return this.element.autosuggestController.data.get('optionClass')
   }
 
   get activeCssClass () {
-    return this.element.autosuggestController.element.dataset.anchorActiveClass
+    return this.element.autosuggestController.data.get('optionActiveClass')
   }
 
   get textCssClass () {
-    return this.autosuggestController.element.dataset.anchorTextClass
+    return this.autosuggestController.data.get('optionTextClass')
   }
 
   get valueCssClass () {
-    return this.autosuggestController.element.dataset.anchorValueClass
+    return this.autosuggestController.data.get('optionValueClass')
   }
 }

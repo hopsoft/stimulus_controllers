@@ -102,6 +102,6 @@ export class ContainerController extends Controller {
   }
 
   get cssClass () {
-    return this.autosuggestController.element.dataset.containerClass
+    return this.autosuggestController.data.get('containerClass')
   }
 }

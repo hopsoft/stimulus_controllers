@@ -4,7 +4,6 @@
   "license": "MIT",
   "version": "0.0.5",
   "repository": "hopsoft/stimulus_controllers",
-  "main": "src/index",
   "scripts": {
     "build": "webpack --mode=production --config webpack.config.js",
     "prettier-standard:check": "yarn run prettier-standard --check ./src/*.js",

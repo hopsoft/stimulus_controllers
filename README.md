@@ -3,7 +3,7 @@
 ## Project Structure
 
 1. `controllers` - the controller library
-1. `packages/playground` - a place to test the controllers in the library
+1. `playground` - a place to test the controllers in the library
 
 ## Setup
 

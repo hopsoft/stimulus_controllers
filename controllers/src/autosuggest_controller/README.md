@@ -1,9 +1,8 @@
 # Autosuggest Controller
 
-Fully customizable cross browser typeahead behavior based on the native [datalist element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist). The only dependency is [Stimulus](https://stimulusjs.org).
-
+Fully customizable cross browser typeahead behavior based on the native [datalist element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist).
 Similar to solutions like [typeahead.js](https://twitter.github.io/typeahead.js/examples/),
-[Select2](https://select2.org), [Chosen](https://harvesthq.github.io/chosen/), and others.
+[Select2](https://select2.org), [Chosen](https://harvesthq.github.io/chosen/), and others. This project's only dependency is [Stimulus](https://stimulusjs.org).
 
 ## Installation
 
@@ -45,10 +44,10 @@ application.register('autosuggest', AutosuggestController)
 
 ### [Configuration](https://stimulusjs.org/handbook/managing-state)
 
-| Attribute                              |          | Default | Description                                 |
-| -------------------------------------- | ---------| ------- | ------------------------------------------- |
-| `data-autosuggest-container-class`     | optional | ""      | CSS class(es) for the dropdown container    |
-| `data-autosuggest-option-class`        | optional | ""      | CSS class(es) for suggested options         |
-| `data-autosuggest-option-active-class` | optional | ""      | CSS class(es) for active options            |
-| `data-autosuggest-option-text-class`   | optional | ""      | CSS class(es) for option text               |
-| `data-autosuggest-option-value-class`  | optional | ""      | CSS class(es) for option value              |
+| Attribute                              |          | Default | Description                               |
+| -------------------------------------- | ---------| ------- | ----------------------------------------- |
+| `data-autosuggest-container-class`     | optional | ""      | CSS classes for the dropdown container    |
+| `data-autosuggest-option-class`        | optional | ""      | CSS classes for suggested options         |
+| `data-autosuggest-option-active-class` | optional | ""      | CSS classes for active options            |
+| `data-autosuggest-option-text-class`   | optional | ""      | CSS classes for option text               |
+| `data-autosuggest-option-value-class`  | optional | ""      | CSS classes for option value              |

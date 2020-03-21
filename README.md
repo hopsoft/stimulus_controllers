@@ -5,7 +5,7 @@
 1. `controllers` - the controller library
 1. `playground` - a place to test the controllers in the library
 
-## Setup
+## Local Setup
 
 ```sh
 git clone git@github.com:hopsoft/stimulus_controllers.git

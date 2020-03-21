@@ -10,6 +10,7 @@
     "prettier-standard:format": "yarn run prettier-standard ./src/*.js",
     "loc": "cloc --exclude-dir=node_modules,test --include-ext=js ./src"
   },
+  "main": "dist/main.js",
   "publishConfig": {
     "access": "public"
   },

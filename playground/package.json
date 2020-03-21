@@ -8,7 +8,8 @@
   "scripts": {
     "start": "yarn run webpack-dev-server --mode=development --config webpack.config.js",
     "prettier-standard:check": "yarn run prettier-standard --check ./src/*.js",
-    "prettier-standard:format": "yarn run prettier-standard ./src/*.js"
+    "prettier-standard:format": "yarn run prettier-standard ./src/*.js",
+    "loc": "cloc --exclude-dir=node_modules,test --include-ext=js ./src"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",

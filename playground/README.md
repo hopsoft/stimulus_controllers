@@ -11,3 +11,11 @@ This project supports in browser manual testing of the Stimulus components defin
     ```sh
     yarn start
     ```
+
+## Contributing
+
+Standardize your code before pushing to GitHub.
+
+```sh
+yarn prettier-standard:format
+```

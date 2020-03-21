@@ -1,4 +1,3 @@
 /node_modules
-/packages/**/node_modules
-/playground/node_modules
+/**/node_modules
 .tmuxinator.yml

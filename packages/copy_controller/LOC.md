@@ -1,8 +1,0 @@
-cloc|github.com/AlDanial/cloc v 1.84  T=0.01 s (144.0 files/s, 3744.0 lines/s)
---- | ---
-
-Language|files|blank|comment|code
-:-------|-------:|-------:|-------:|-------:
-JavaScript|2|9|0|43
---------|--------|--------|--------|--------
-SUM:|2|9|0|43

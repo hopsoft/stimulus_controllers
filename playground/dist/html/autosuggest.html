@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="../main.js"></script>
+</head>
+<body class="bg-gray-200">
+  <div class="flex justify-center m-6">
+    <div class="w-full max-w-xl">
+      <h1 class="text-gray-800 font-semibold text-2xl whitespace-no-wrap">Playground</h1>
+      <div class="text-gray-600 text-xs mb-3">A test bed for the controllers defined under <code>packages</code></div>
+      <form class="bg-white shadow-md rounded p-8 mb-4">
+        <h2 class="text-gray-700 text-xl whitespace-no-wrap mb-3">
+          <a href="https://github.com/hopsoft/stimulus_controllers/tree/master/packages/autosuggest_controller"
+             class="hover:text-blue-900 hover:underline">
+            @hopsoft/autosuggest-controller
+          </a>
+        </h2>
+        <label class="block text-gray-600">Email Address</label>
+        <input data-controller="autosuggest"
+          data-autosuggest-container-class="h-64 w-0 bg-white rounded border border-gray-400 shadow-xl mt-1 p-1"
+          data-autosuggest-option-class="block mb-2 px-3 py-1 focus:bg-green-200 hover:bg-green-200"
+          data-autosuggest-option-active-class="bg-green-200"
+          data-autosuggest-option-text-class="block text-gray-700"
+          data-autosuggest-option-value-class="block text-xs text-gray-500"
+          class="block shadow appearance-none border rounded w-full py-2 px-3 mb-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          name="email" type="email" list="contacts" multiple>
+        <button type="reset"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          Reset
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <datalist id="contacts">
+    <option value="abel_pouros@ankunding.co">Abel Pouros</option>
+    <option value="adalberto@senger.co">Dr. Adalberto Bergstrom</option>
+    <option value="adan.von@schmidt.com">Adan Von</option>
+    <option value="adrian@rohanlemke.co">Adrian McDermott</option>
+    <option value="adrianne.gaylord@hintz.biz">Adrianne Gaylord</option>
+    <option value="ahmed.conn@auerweimann.io">Ahmed Conn</option>
+    <option value="ahmed@crooksstrosin.co">Ahmed Heaney MD</option>
+    <option value="akilah.herman@welch.info">Akilah Herman</option>
+    <option value="alane_weissnat@gulgowski.info">Alane Weissnat</option>
+    <option value="alec.leannon@larson.net">Alec Leannon</option>
+    <option value="alejandrina.i@gislason.name">Alejandrina Abernathy I</option>
+    <option value="alethea@jacobs.name">Alethea Collins</option>
+    <option value="alex.murazik@ernseryost.org">Alex Murazik</option>
+    <option value="alfred@bergnaum.biz">Alfred Christiansen PhD</option>
+    <option value="ali@mueller.net">Ali Franecki</option>
+    <option value="allegra@fay.name">Allegra Leuschke</option>
+    <option value="alvin@haleymoriette.biz">Alvin Paucek</option>
+    <option value="amore.d.antonia@hirthe.org">Antonia D'Amore</option>
+    <option value="andre@witting.info">Andre Hermann</option>
+    <option value="angle_krajcik@blick.io">Angle Krajcik</option>
+    <option value="anitra_bayer@hills.name">Anitra Bayer</option>
+    <option value="anjanette@creminkuvalis.info">Anjanette Schamberger</option>
+    <option value="annita@ward.org">Annita Murphy</option>
+    <option value="ardith_yundt@streich.info">Ardith Yundt Sr.</option>
+    <option value="arielle@spinka.co">Arielle Schoen IV</option>
+    <option value="arnoldo_durgan@pricebashirian.co">Arnoldo Durgan IV</option>
+    <option value="aron@millerpfeffer.org">Aron Carroll</option>
+    <option value="ashlyn@ortizhagenes.com">Ashlyn Dickens</option>
+    <option value="auer_antony@ernser.net">Antony Auer</option>
+    <option value="bailey.ii@murraychamplin.biz">Dayle Bailey II</option>
+    <option value="barrows@kshlerin.name">Adriene Barrows</option>
+    <option value="bogan.laurinda@hauck.org">Laurinda Bogan</option>
+    <option value="borer.amparo@metz.info">Amparo Borer</option>
+    <option value="brakus.andre@simonis.net">Andre Brakus</option>
+    <option value="brekke.estela@anderson.net">Estela Brekke</option>
+    <option value="cartwright@cartwright.org">Albina Cartwright</option>
+    <option value="cassin_portia@gerhold.name">Portia Cassin</option>
+    <option value="chuck_senger@kertzmannwilliamson.io">Chuck Senger</option>
+    <option value="cleo.streich@rohan.net">Cleo Streich</option>
+    <option value="cordelia.rice@keler.org">Cordelia Rice</option>
+    <option value="cormier@kutch.net">Abram Cormier</option>
+    <option value="coy@lefflerauer.com">Coy Kertzmann</option>
+    <option value="cummings@schillerveum.info">Renee Cummings</option>
+    <option value="daniel@nitzsche.biz">Joannie Daniel</option>
+    <option value="dickens@cartwright.info">Jesus Dickens Jr.</option>
+    <option value="dicki@robelwill.info">Adam Dicki</option>
+    <option value="dickinson@bednar.com">Gail Dickinson</option>
+    <option value="dina.altenwerth@jenkinsmonahan.biz">Dina Altenwerth</option>
+    <option value="dr.beahan@dicki.info">Dr. Corliss Beahan</option>
+    <option value="dr@cain.com">Dr. Wilfredo Goldner</option>
+    <option value="dr@quitzon.org">Dr. Aldo Ruecker</option>
+    <option value="dr@windler.name">Dr. Shannan Runolfsson</option>
+    <option value="dvm@wisozk.com">Anthony Kunze DVM</option>
+    <option value="ebert.lakeisha@leschbarrows.co">Lakeisha Ebert</option>
+    <option value="ebert@langworth.biz">Annie Ebert</option>
+    <option value="effertz.jewell@halvorson.com">Jewell Effertz</option>
+    <option value="eleanor.miss@ratke.name">Miss Eleanor Brekke</option>
+    <option value="elenor.muller@lueilwitz.net">Elenor Muller</option>
+    <option value="eneida@dickensabshire.org">Eneida Skiles</option>
+    <option value="fahey_angelina@conroy.com">Angelina Fahey</option>
+    <option value="feest.alan@mantestreich.org">Alan Feest</option>
+    <option value="ferry@marks.co">Jeromy Ferry</option>
+    <option value="gene_ms@littel.co">Ms. Gene Hodkiewicz</option>
+    <option value="goldner_isiah@kozey.co">Isiah Goldner</option>
+    <option value="goyette_leeanne@predovicoreilly.info">Leeanne Goyette</option>
+    <option value="graham@mayer.co">Alvaro Graham</option>
+    <option value="graham@welch.info">Renea Graham</option>
+    <option value="green_lowell@towne.biz">Lowell Green</option>
+    <option value="gutkowski.bennett@bechtelar.com">Bennett Gutkowski</option>
+    <option value="harber@marquardt.org">Germaine Harber</option>
+    <option value="hayes.abbie@gislasongibson.io">Abbie Hayes</option>
+    <option value="herman@ratke.name">Louis Herman</option>
+    <option value="hollis@pouros.co">Hollis Buckridge</option>
+    <option value="homenick@ebert.biz">Lucila Homenick</option>
+    <option value="i@conn.info">Connie Renner I</option>
+    <option value="ii_harris@harber.biz">Ezra Harris II</option>
+    <option value="iii_wilkinson@bechtelarborer.com">Armando Wilkinson III</option>
+    <option value="india_langworth@bernier.com">India Langworth</option>
+    <option value="isadora@murray.io">Isadora Ondricka Jr.</option>
+    <option value="jayson@runteschowalter.io">Jayson Gerhold</option>
+    <option value="johnnie@marvinkshlerin.co">Johnnie Bashirian</option>
+    <option value="johnston@lemke.org">Francina Johnston</option>
+    <option value="jordon_wintheiser@bode.co">Jordon Wintheiser</option>
+    <option value="karl@herzog.net">Karl Kuhic</option>
+    <option value="kautzer_mrs@kreiger.biz">Mrs. Vina Kautzer</option>
+    <option value="keebler_juanita@sawayn.io">Juanita Keebler</option>
+    <option value="kemmer@upton.io">Victor Kemmer II</option>
+    <option value="kerstin_hermiston@christiansen.info">Kerstin Hermiston</option>
+    <option value="klein@mueller.biz">Ms. Justina Klein</option>
+    <option value="kristopher_mayert@hackett.info">Kristopher Mayert</option>
+    <option value="kunde@jerde.co">Angle Kunde Jr.</option>
+    <option value="larae.mr@windler.co">Mr. Larae Carter</option>
+    <option value="lehner@schimmellittel.biz">Janel Lehner</option>
+    <option value="lester.kris@kihn.io">Lester Kris</option>
+    <option value="lien_cormier@feil.com">Lien Cormier</option>
+    <option value="lueilwitz.alejandra@bins.io">Alejandra Lueilwitz</option>
+    <option value="luettgen@willgleichner.io">Halina Luettgen PhD</option>
+    <option value="mann@hermanoconnell.org">Sunni Mann I</option>
+    <option value="marquis.labadie@johnsonveum.io">Marquis Labadie</option>
+    <option value="mayert.ahmad@boyervandervort.biz">Ahmad Mayert DVM</option>
+    <option value="mcclure@batz.net">Aldo McClure</option>
+    <option value="mccullough.altha@fadel.org">Ms. Altha McCullough</option>
+    <option value="md.dominic@kohlerhills.net">Dominic Skiles MD</option>
+    <option value="md_haag@howelindgren.org">Divina Haag MD</option>
+    <option value="minh@toykohler.co">Minh Schneider</option>
+    <option value="miss@romaguera.net">Miss Garnet Schamberger</option>
+    <option value="miss@wyman.org">Miss Eric Hermiston</option>
+    <option value="mitchell@gerholdromaguera.org">Mr. Fernanda Mitchell</option>
+    <option value="mittie@heaneytreutel.info">Mittie Denesik</option>
+    <option value="mosciski@doyle.net">Salley Mosciski</option>
+    <option value="mr@cronabauch.biz">Mr. Lucretia Carter</option>
+    <option value="mr_junior@cruickshank.info">Mr. Junior Trantow</option>
+    <option value="mraz.ashley@mayert.com">Ashley Mraz</option>
+    <option value="ms@greenholt.info">Ms. Hosea Rippin</option>
+    <option value="murray.roger@watsica.net">Roger Murray</option>
+    <option value="nicolas.turcotte@connellyheaney.org">Nicolas Turcotte</option>
+    <option value="nikolaus.jim@stracke.org">Jim Nikolaus</option>
+    <option value="nitzsche@harber.org">Marlin Nitzsche</option>
+    <option value="noble.graham@oreillynolan.com">Noble Graham</option>
+    <option value="nu@satterfielddickinson.org">Nu Wintheiser</option>
+    <option value="ortiz.macie@windlermohr.net">Macie Ortiz</option>
+    <option value="parker@effertz.io">Ching Parker</option>
+    <option value="paucek@stroman.info">Agustin Paucek</option>
+    <option value="pollich@pagachand.com">Adolfo Pollich</option>
+    <option value="porsche@rolfson.org">Porsche Price</option>
+    <option value="rath_alaine@brownbauch.com">Alaine Rath</option>
+    <option value="rogahn_alisha@durgan.info">Alisha Rogahn</option>
+    <option value="roob@sauer.io">Mr. Laverne Roob</option>
+    <option value="rosenbaum_annalisa@buckridge.name">Annalisa Rosenbaum</option>
+    <option value="schulist.anastacia@bailey.name">Anastacia Schulist</option>
+    <option value="sherilyn@stehrmclaughlin.net">Sherilyn Wisozk</option>
+    <option value="sherrell_koepp@olson.com">Sherrell Koepp</option>
+    <option value="smith@welchoconnell.biz">Mrs. Ivette Smith</option>
+    <option value="soila@berge.net">Soila Walker</option>
+    <option value="stanford_bernhard@tromp.org">Stanford Bernhard</option>
+    <option value="thiel_octavio@stiedemannswift.co">Octavio Thiel</option>
+    <option value="thompson@wiza.info">Arica Thompson</option>
+    <option value="torp.dr@collier.name">Dr. Merlyn Torp</option>
+    <option value="tyra@gorczanystrosin.biz">Tyra Schulist DVM</option>
+    <option value="von@romaguera.info">Adrianna Von</option>
+    <option value="william@jacobsondickinson.io">William Cole</option>
+    <option value="wintheiser@koanderson.org">Tawanna Wintheiser</option>
+    <option value="wisozk.emory@parkerbeatty.info">Emory Wisozk IV</option>
+    <option value="witting.mrs@ziemannpadberg.info">Mrs. Melody Witting</option>
+    <option value="wiza@bergstrom.biz">Kara Wiza</option>
+    <option value="wiza_aldo@lockman.biz">Aldo Wiza</option>
+    <option value="wm@rowe.co">Wm Howell</option>
+  </datalist>
+</body>
+</html>

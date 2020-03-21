@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="../main.js"></script>
+</head>
+<body class="bg-gray-200">
+
+  <div class="flex justify-center m-6">
+
+    <div class="w-full max-w-xl">
+      <h1 class="text-gray-800 font-semibold text-2xl whitespace-no-wrap">Playground</h1>
+      <div class="text-gray-600 text-xs mb-3">A test bed for the controllers defined under <code>packages</code></div>
+      <form data-controller="copy" data-copy-content='You copied it...' data-copy-duration='500' class="bg-white shadow-md rounded p-8 mb-4">
+        <h2 class="text-gray-700 text-xl whitespace-no-wrap mb-3">
+          <a href="https://github.com/hopsoft/stimulus_controllers/tree/master/packages/copy_controller"
+             class="hover:text-blue-900 hover:underline">
+            @hopsoft/copy-controller
+          </a>
+        </h2>
+        <div class="mb-4">
+          <pre class="highlight">
+            <code data-target="copy.source">
+<span class="nt">&lt;div</span> <span class="na">controller=</span><span class="s">"remote-form"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+            </code>
+          </pre>
+        </div>
+        <button data-target='copy.trigger' data-action='click->copy#copy' type="button"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+          Copy
+        </button>
+      </form>
+
+      <div class="flex flex-row justify-between text-xs px-1">
+        <div class="text-gray-500">
+          &copy; 2020 Hopsoft. All rights reserved.
+        </div>
+
+        <a href="https://github.com/hopsoft/stimulus_controllers" class="text-gray-700 hover:underline"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

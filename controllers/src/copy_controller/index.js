@@ -24,6 +24,7 @@ export class CopyController extends Controller {
     } else {
       range = document.createRange()
       range.selectNode(this.sourceTarget)
+      window.getSelection().empty()
       window.getSelection().addRange(range)
     }
 

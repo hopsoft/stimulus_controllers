@@ -51,5 +51,6 @@ application.register('copy', CopyController) // <---
 | --------------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------- |
 | `data-copy-content`   | optional | "Copied..." | Content to show in the button after a copy has been performed                                           |
 | `data-copy-duration`  | optional | 2000        | How many milliseconds to show the copied content in the button before reverting to the original content |
+| `data-copy-disable`   | optional | false       | Whether to add a `disabled` attribute on `<input>`s and `<button>`s, or a `disabled` CSS class on all other elements during copying |
 
 Copy content can be disabled by setting `data-copy-content=""` or `data-copy-duration="0"`

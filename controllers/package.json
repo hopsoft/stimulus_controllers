@@ -2,10 +2,10 @@
   "name": "@hopsoft/controllers",
   "author": "Nathan Hopkins",
   "license": "MIT",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": "hopsoft/stimulus_controllers",
   "scripts": {
-    "build": "webpack --mode=production --config webpack.config.js",
+    "build": "rollup --config",
     "prettier-standard:check": "yarn run prettier-standard --check ./src/*.js",
     "prettier-standard:format": "yarn run prettier-standard ./src/*.js",
     "loc": "cloc --exclude-dir=node_modules,test --include-ext=js ./src"
@@ -22,8 +22,13 @@
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.6",
+    "@rollup/plugin-node-resolve": "^7.1.1",
     "babel-loader": "^8.0.6",
     "prettier-standard": "^16.1.0",
+    "rollup": "^2.1.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "turbolinks": "^5.2.0",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   }

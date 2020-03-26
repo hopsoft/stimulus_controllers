@@ -44,15 +44,7 @@ export class CopyController extends Controller {
   }
 
   _toggleDisabled () {
-    if ('disabled' in this.triggerTarget) {
-      if (this.triggerTarget.disabled) {
-        this.triggerTarget.removeAttribute('disabled')
-      } else {
-        this.triggerTarget.setAttribute('disabled', '')
-      }
-    } else {
-      this.triggerTarget.classList.toggle('disabled')
-    }
+    this.triggerTarget.toggleAttribute('disabled', !this.triggerTarget.disabled)
   }
 
   get content () {

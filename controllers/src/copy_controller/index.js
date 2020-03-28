@@ -7,7 +7,10 @@ export class CopyController extends Controller {
     event.preventDefault()
     this.value = this.sourceTarget.value || this.sourceTarget.innerHTML
     if (!this.value.length) return
+
+    if (this.disable) this._toggleDisabled()
     this._doCopy()
+    if (this.disable) this._toggleDisabled()
   }
 
   showCopied () {
@@ -40,11 +43,19 @@ export class CopyController extends Controller {
     }
   }
 
+  _toggleDisabled () {
+    this.triggerTarget.toggleAttribute('disabled', !this.triggerTarget.disabled)
+  }
+
   get content () {
     return this.data.get('content') || 'Copied...'
   }
 
   get duration () {
     return Number(this.data.get('duration') || 2000)
+  }
+
+  get disable () {
+    return this.data.get('disable') === 'true' || false
   }
 }

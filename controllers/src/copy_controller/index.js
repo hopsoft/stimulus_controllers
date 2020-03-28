@@ -7,17 +7,21 @@ export class CopyController extends Controller {
     event.preventDefault()
     this.value = this.sourceTarget.value || this.sourceTarget.innerHTML
     if (!this.value.length) return
-
     if (this.disable) this._toggleDisabled()
     this._doCopy()
-    if (this.disable) this._toggleDisabled()
   }
 
   showCopied () {
     const content = this.triggerTarget.innerHTML
-    if (this.content === content || this.duration === 0) return
+    if (this.content === content || this.duration === 0) {
+      if (this.disable) this._toggleDisabled()
+      return
+    }
     this.triggerTarget.innerHTML = this.content
-    setTimeout(() => (this.triggerTarget.innerHTML = content), this.duration)
+    setTimeout(() => {
+      this.triggerTarget.innerHTML = content
+      if (this.disable) this._toggleDisabled()
+    }, this.duration)
   }
 
   _doCopy () {
@@ -39,7 +43,7 @@ export class CopyController extends Controller {
       this.sourceTarget.value = this.value
       this.sourceTarget.focus()
     } else {
-      window.getSelection().removeRange(range)
+      window.getSelection().removeAllRanges()
     }
   }
 
@@ -56,6 +60,6 @@ export class CopyController extends Controller {
   }
 
   get disable () {
-    return this.data.get('disable') === 'true' || false
+    return this.element.hasAttribute(`data-${this.identifier}-disable`)
   }
 }

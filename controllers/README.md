@@ -30,4 +30,6 @@ git add .
 git commit -m "build ..."
 git push github
 yarn publish
+git push github
+git push github --tags
 ```

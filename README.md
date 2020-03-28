@@ -8,7 +8,7 @@
 ## Local Setup
 
 ```sh
-git clone git@github.com:hopsoft/stimulus_controllers.git
+git clone --origin github git@github.com:hopsoft/stimulus_controllers.git
 cd stimulus_controllers/playground
 yarn && yarn start
 ```

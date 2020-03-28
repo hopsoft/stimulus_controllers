@@ -60,6 +60,6 @@ export class CopyController extends Controller {
   }
 
   get disable () {
-    return this.element.hasAttribute(`data-${this.identifier}-disable`)
+    return this.data.has('disable')
   }
 }

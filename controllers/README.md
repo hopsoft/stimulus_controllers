@@ -26,5 +26,8 @@ yarn prettier-standard:format
 
 ```sh
 yarn build
+git add .
+git commit -m "build ..."
+git push github
 yarn publish
 ```

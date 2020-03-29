@@ -11,25 +11,29 @@
     <div class="w-full max-w-xl">
       <h1 class="text-gray-800 font-semibold text-2xl whitespace-no-wrap">Playground</h1>
       <div class="text-gray-600 text-xs mb-3">A test bed for the controllers defined under <code>controllers</code></div>
-      <form data-controller="copy" data-copy-content='You copied it...' data-copy-duration='500' data-copy-disable class="bg-white shadow-md rounded p-8 mb-4">
+      <div class="bg-white shadow-md rounded p-8 mb-4">
         <h2 class="text-gray-700 text-xl whitespace-no-wrap mb-3">
           <a href="https://github.com/hopsoft/stimulus_controllers/tree/master/controllers/src/copy_controller"
              target="_blank"
              class="hover:text-blue-900 hover:underline">
-            @hopsoft/copy-controller
+            @hopsoft/cloak-controller
           </a>
         </h2>
         <div class="mb-4">
-          <pre class="highlight">
-<code data-target="copy.source">&lt;div controller="remote-form"&gt;
-&lt;/div&gt;</code>
-          </pre>
+          <a id="active" class="block underline text-purple-600" href="#">Trigger fake activity</a>
+          <a id="inactive" class="block underline text-purple-600" href="#">Stop fake activity</a>
+          <!-- use custom events for demo -->
+          <script>
+            document.getElementById('active').addEventListener('click', () => document.dispatchEvent(new Event('demo:active')))
+            document.getElementById('inactive').addEventListener('click', () => document.dispatchEvent(new Event('demo:inactive')))
+          </script>
+
+          <!-- wrap with div because we're using fontawesome svg which dynamically replaces the <i> tag-->
+          <div data-controller="activity" data-activity-show-event="demo:active" data-activity-hide-event="demo:inactive" class="mt-4" hidden>
+            <i class="fas fa-fan fa-spin text-4xl text-blue-500"></i>
+          </div>
         </div>
-        <a href="#" data-target='copy.trigger' data-action='click->copy#copy'
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-          Copy
-        </a>
-      </form>
+      </div>
 
       <div class="flex flex-row justify-between text-xs px-1">
         <div class="text-gray-500">

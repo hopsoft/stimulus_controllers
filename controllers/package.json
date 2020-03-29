@@ -2,12 +2,12 @@
   "name": "@hopsoft/controllers",
   "author": "Nathan Hopkins",
   "license": "MIT",
-  "version": "0.0.8",
+  "version": "0.0.11",
   "repository": "hopsoft/stimulus_controllers",
   "scripts": {
     "build": "rollup --config",
-    "prettier-standard:check": "yarn run prettier-standard --check ./src/*.js",
-    "prettier-standard:format": "yarn run prettier-standard ./src/*.js",
+    "prettier-standard:check": "yarn run prettier-standard --check ./src/**/*.js",
+    "prettier-standard:format": "yarn run prettier-standard ./src/**/*.js",
     "loc": "cloc --exclude-dir=node_modules,test --include-ext=js ./src"
   },
   "main": "dist/main.js",

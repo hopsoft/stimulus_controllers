@@ -1,4 +1,4 @@
-[![Lines of Code](http://img.shields.io/badge/lines_of_code-375-brightgreen.svg?style=flat)](http://blog.codinghorror.com/the-best-code-is-no-code-at-all/)
+[![Lines of Code](http://img.shields.io/badge/lines_of_code-428-brightgreen.svg?style=flat)](http://blog.codinghorror.com/the-best-code-is-no-code-at-all/)
 
 # Controller Library
 
@@ -26,5 +26,9 @@ yarn prettier-standard:format
 
 ```sh
 yarn build
+git add .
+git commit -m "build ..."
 yarn publish
+git push github
+git push github --tags
 ```

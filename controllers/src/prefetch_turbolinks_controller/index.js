@@ -43,7 +43,7 @@ export class PrefetchTurbolinksController extends Controller {
   }
 
   get url () {
-    return this.element.href
+    return this.element.getAttribute('href')
   }
 
   get prefetching () {

@@ -3,17 +3,18 @@ import { Controller } from 'stimulus'
 export class DismissibleController extends Controller {
   async dismiss (e) {
     e.preventDefault()
-    this.element.classList.add(this.invisibleClass)
 
     try {
       if (this.data.has('url')) {
         fetch(this.url, {
           method: this.method,
-          credentials: 'same-origin'
+          credentials: 'same-origin',
+          body: this.body
         })
       }
     } catch (e) {
     } finally {
+      this.element.classList.add(this.invisibleClass)
       setTimeout(() => {
         this.element.remove()
       }, this.duration)
@@ -33,14 +34,10 @@ export class DismissibleController extends Controller {
   }
 
   get method () {
-    return this.data.get('method')
+    return this.data.get('method') || 'PUT'
   }
 
-  get property () {
-    return this.data.get('property')
-  }
-
-  get value () {
-    return this.data.get('value')
+  get body () {
+    return this.data.get('body') || ''
   }
 }

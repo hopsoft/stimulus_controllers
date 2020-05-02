@@ -1,5 +1,7 @@
 # Dismissible Controller
 
+Dismiss an alert and simultaneously send a XHR request, for example a `last_seen` timestamp.
+
 ## Installation
 
 ```sh
@@ -26,8 +28,7 @@ application.register('dismissible', DismissibleController) // <---
      data-dismissible-invisible-class="opacity-0"
      data-dismissible-duration="200"
      data-dismissible-url="/user"
-     data-dismissible-property="last_viewed"
-     data-dismissible-value=""
+     data-dismissible-body="{&quot;user&quot;:{ &quot;last_viewed_at&quot;: &quot;2020-05-01T00:00:00&quot;}}"
      data-dismissible-method="PUT"
      Alert...
 </div>
@@ -37,5 +38,8 @@ application.register('dismissible', DismissibleController) // <---
 
 | Attribute                  |          | Default | Example                                             | Description                                                |
 | -------------------------- | -------- | ------- | --------------------------------------------------- | ---------------------------------------------------------- |
-| `data-activity-show-event` | required | ""      | `data-activity-show-event="stimulus-reflex:before"` | Space separated list of events to listen for on `Document` |
-| `data-activity-hide-event` | required | ""      | `data-activity-hide-event="stimulus-reflex:after"`  | Space separated list of events to listen for on `Document` |
+| `data-dismissible-invisible-class` | | "hidden"      | `data-dismissible-invisible-class="opacity-0"` | The class added to the controller element after dismissing |
+| `data-dismissible-duration` | | 200 | `data-dismissible-duration="500"` | The amount of time to close the element after which the request is sent. |
+| `data-dismissible-url` | required | | `data-dismissible-url="/my_endpoint"` | The URL to fetch |
+| `data-dismissible-method` | | "PUT" | `data-dismissible-method="POST"` | The HTTP method to use in the request |
+| `data-dismissible-body` | | "" | `data-dismissible-body="{&quot;user&quot;:{ &quot;last_viewed_at&quot;: &quot;2020-05-01T00:00:00&quot;}}"` | The request body as JSON, has to be HTML-escaped. |

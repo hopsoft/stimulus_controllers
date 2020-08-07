@@ -39,7 +39,6 @@ export class CopyController extends Controller {
     this.showCopied()
 
     if (this.sourceTarget.value) {
-      this.sourceTarget.value = ''
       this.sourceTarget.value = this.value
       this.sourceTarget.focus()
     } else {

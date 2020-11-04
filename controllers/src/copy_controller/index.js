@@ -38,6 +38,17 @@ export class CopyController extends Controller {
     document.execCommand('copy')
     this.showCopied()
 
+    this.element.dispatchEvent(
+      new CustomEvent('copy:copied', {
+        bubbles: true,
+        cancelable: false,
+        detail: {
+          value: this.sourceTarget.value,
+          message: this.content
+        }
+      })
+    )
+
     if (this.sourceTarget.value) {
       this.sourceTarget.value = ''
       this.sourceTarget.value = this.value

@@ -24,9 +24,9 @@ application.register('copy', CopyController) // <---
 ## [Controller](https://stimulusjs.org/reference/controllers)
 
 ```html
-<div data-controller="copy" data-copy-content='Copied...' data-copy-duration='1'>
+<div data-controller="copy" data-copy-content='Copied...' data-copy-duration='1000'>
   <textarea data-target='copy.source'></textarea>
-  <button type="button" data-target='copy.target' data-action='click->copy#copy'>Copy</button>
+  <button type="button" data-target='copy.trigger' data-action='click->copy#copy'>Copy</button>
 </div>
 ```
 

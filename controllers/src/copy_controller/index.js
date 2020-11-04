@@ -26,6 +26,12 @@ export class CopyController extends Controller {
 
   _doCopy () {
     let range
+    let isHidden = this.sourceTarget.type === 'hidden'
+
+    if (isHidden) {
+      this.sourceTarget.type = 'text'
+    }
+
     if (this.sourceTarget.value) {
       this.sourceTarget.select()
     } else {
@@ -36,6 +42,10 @@ export class CopyController extends Controller {
     }
 
     document.execCommand('copy')
+
+    if (isHidden) {
+      this.sourceTarget.type = 'hidden'
+    }
     this.showCopied()
 
     this.element.dispatchEvent(

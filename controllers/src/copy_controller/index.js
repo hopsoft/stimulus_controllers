@@ -12,16 +12,18 @@ export class CopyController extends Controller {
   }
 
   showCopied () {
-    const content = this.triggerTarget.innerHTML
-    if (this.content === content || this.duration === 0) {
-      if (this.disable) this._toggleDisabled()
-      return
+    if (this.hasTriggerTarget) {
+      const content = this.triggerTarget.innerHTML
+      if (this.content === content || this.duration === 0) {
+        if (this.disable) this._toggleDisabled()
+        return
+      }
+      this.triggerTarget.innerHTML = this.content
+      setTimeout(() => {
+        this.triggerTarget.innerHTML = content
+        if (this.disable) this._toggleDisabled()
+      }, this.duration)
     }
-    this.triggerTarget.innerHTML = this.content
-    setTimeout(() => {
-      this.triggerTarget.innerHTML = content
-      if (this.disable) this._toggleDisabled()
-    }, this.duration)
   }
 
   _doCopy () {
@@ -69,7 +71,12 @@ export class CopyController extends Controller {
   }
 
   _toggleDisabled () {
-    this.triggerTarget.toggleAttribute('disabled', !this.triggerTarget.disabled)
+    if (this.hasTriggerTarget) {
+      this.triggerTarget.toggleAttribute(
+        'disabled',
+        !this.triggerTarget.disabled
+      )
+    }
   }
 
   get content () {

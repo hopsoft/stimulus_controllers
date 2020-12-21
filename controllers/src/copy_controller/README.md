@@ -33,9 +33,9 @@ application.register('copy', CopyController) // <---
 ### [Targets](https://stimulusjs.org/reference/targets)
 
 | Name      |          | Description                                              |
-| --------- | -------- | -------------------------------------------------------- |
-| `source`  | required | An input or textarea that holds the content to be copied |
-| `trigger` | required | The button used to perform the copy                      |
+| --------- | -------- | ------------------------------------------------------------------------ |
+| `source`  | required | An input (can be hidden) or textarea that holds the content to be copied |
+| `trigger` |          | The button used to perform the copy                                      |
 
 
 ### [Actions](https://stimulusjs.org/reference/actions)
@@ -44,6 +44,12 @@ application.register('copy', CopyController) // <---
 | -------- | -------- | ------------------------------------------------------------------- |
 | `copy`   | required | Performs the copy action (typically defined on the `button` target) |
 
+### Events
+
+| Name          | Description                                                                                                                    |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------|
+| `copy:copied` | Fired when the element text has been copied to the clipboard. This is useful for example when displaying a tooltip afterwards. |
+|               | `event.detail = { value: this.sourceTarget.value, message: this.content }`                                                     |
 
 ### [Configuration](https://stimulusjs.org/handbook/managing-state)
 

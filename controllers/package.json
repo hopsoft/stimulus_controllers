@@ -15,8 +15,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "stimulus": "^1.1.1"
+  "peerDependencies": {
+    "stimulus": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",

@@ -6,6 +6,15 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist')
   },
+  resolve: {
+    alias: {
+      stimulus: path.resolve('node_modules', 'stimulus'),
+      '@hopsoft/controllers': path.resolve(
+        __dirname,
+        '../controllers/dist/main.js'
+      )
+    }
+  },
   module: {
     rules: [
       {

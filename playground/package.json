@@ -15,7 +15,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
-    "stimulus": "^1.1.1",
+    "stimulus": "^2.0.0",
     "tailwindcss": "^1.2.0",
     "turbolinks": "^5.2.0"
   },

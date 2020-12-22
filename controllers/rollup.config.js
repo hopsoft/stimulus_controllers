@@ -1,8 +1,9 @@
-import resolve from '@rollup/plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
-import {terser} from 'rollup-plugin-terser';
+import resolve from '@rollup/plugin-node-resolve'
+import babel from 'rollup-plugin-babel'
+import { terser } from 'rollup-plugin-terser'
 
 export default {
+  external: ['stimulus'],
   input: 'src/index.js',
   output: {
     file: 'dist/main.js',
@@ -14,5 +15,5 @@ export default {
       exclude: 'node_modules/**'
     }),
     terser()
-  ]  
+  ]
 }

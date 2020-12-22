@@ -1,6 +1,6 @@
 import { Application } from 'stimulus'
 import { definitionsFromContext } from 'stimulus/webpack-helpers'
-import * as controllers from '../../controllers/src'
+import * as controllers from '@hopsoft/controllers'
 
 const application = Application.start()
 application.register('activity', controllers.ActivityController)
